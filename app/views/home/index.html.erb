@@ -1,0 +1,11 @@
+<h1>Home</h1>
+
+<% if session[:user_id] %>
+  <p>¡Hola, <%= current_user.email %>! Estás logueado.</p>
+  <%= link_to "Desconectar", logout_path, method: :delete, class: "btn btn-danger" %>
+<% else %>
+  <p>No has iniciado sesión.</p>
+  <%= link_to "Iniciar sesión", login_path, class: "btn btn-primary" %>
+  <%= link_to "Crear cuenta", signup_path, class: "btn btn-success" %>
+<% end %>
+
